@@ -1,0 +1,6 @@
+node_modules
+package-lock.json
+.scannerwork
+.DS_Store
+.vscode
+lib

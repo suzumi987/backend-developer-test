@@ -1,0 +1,7 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "no-unused-variable": true,
+    "no-console": [false, "log"]
+  }
+}
