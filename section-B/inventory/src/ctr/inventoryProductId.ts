@@ -1,9 +1,13 @@
 
+interface IResponse {
+    data: string | null | object
+    status: number
+    devMessage: string
+}
 
 
 
-
-async function inventoryProductId (): Promise<any> {
+async function inventoryProductId (id: any): Promise<any> {
 
 
 

@@ -16,7 +16,7 @@ router.get('/order', async (_: Request, res: Response) => {
 })
 
 router.get('/order/:id', async (req: Request, res: Response) => {
-    const ctr = await orderId(req.params)
+    const ctr = await orderId(req.params.id)
     res.status(ctr.status).json(ctr)
 })
 

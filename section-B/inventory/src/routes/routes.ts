@@ -16,22 +16,22 @@ router.post('/inventory/import', upload.single('file'), (_: Request, res: Respon
     res.status(200).json(ctr)
 })
 
-router.get('/inventory/products', (_: Request, res: Response) => {
-    const ctr = inventoryProduct()
+router.get('/inventory/products', async (_: Request, res: Response) => {
+    const ctr = await inventoryProduct()
 
-    res.status(200).json(ctr)
+    res.status(ctr.status).json(ctr)
 })
 
-router.get('/inventory/products/:id', (_: Request, res: Response) => {
-    const ctr = inventoryProductId()
+router.get('/inventory/products/:id', async (req: Request, res: Response) => {
+    const ctr = await inventoryProductId(req.params.id)
 
-    res.status(200).json(ctr)
+    res.status(ctr.status).json(ctr)
 })
 
-router.put('/inventory/products', (_: Request, res: Response) => {
-    const ctr = inventoryUpdate()
+router.put('/inventory/products', async (req: Request, res: Response) => {
+    const ctr = await inventoryUpdate(req.body)
 
-    res.status(200).json(ctr)
+    res.status(ctr.status).json(ctr)
 })
 
 
